@@ -66,6 +66,7 @@ flutter:
     - assets/icons/plus.png
     - assets/images/cat.jpg
     - assets/fonts/etna-free-font.otf
+    - assets/audio/elijah_woods.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

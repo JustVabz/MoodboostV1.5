@@ -11,6 +11,7 @@ import 'package:app1/pages/music_page.dart';
 import 'package:app1/pages/settings_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MoodBoostApp());
 }
 
@@ -19,7 +20,7 @@ class MoodBoostApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MoodBoost',
-      theme: AppTheme.lightTheme,
+      theme: appTheme,
       debugShowCheckedModeBanner: false,
       initialRoute: '/login',
       routes: {

@@ -16,9 +16,17 @@ class _MusicPageState extends State<MusicPage> {
   @override
   void initState() {
     super.initState();
-    _player.setUrl(
-      'https://www.youtube.com/watch?v=xwTPvcPYaOo&pp=ygUXZmxlZXR3b29kIG1hYyB0aGUgY2hhaW4%3D', // Replace with your own
-    );
+    _loadAudio();
+  }
+
+  Future<void> _loadAudio() async {
+    try {
+      await _player.setAsset('assets/audio/elijah_woods.mp3');
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error loading audio: $e')),
+      );
+    }
   }
 
   @override
@@ -28,14 +36,20 @@ class _MusicPageState extends State<MusicPage> {
   }
 
   void _togglePlay() async {
-    if (isPlaying) {
-      await _player.pause();
-    } else {
-      await _player.play();
+    try {
+      if (isPlaying) {
+        await _player.pause();
+      } else {
+        await _player.play();
+      }
+      setState(() {
+        isPlaying = !isPlaying;
+      });
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e')),
+      );
     }
-    setState(() {
-      isPlaying = !isPlaying;
-    });
   }
 
   @override
@@ -61,7 +75,7 @@ class _MusicPageState extends State<MusicPage> {
               ),
             ),
             const SizedBox(height: 24),
-            Text("Recommended: Calm Vibes", style: Theme.of(context).textTheme.titleMedium),
+            Text("Now Playing", style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
             Row(
               children: [
@@ -70,7 +84,7 @@ class _MusicPageState extends State<MusicPage> {
                   onPressed: _togglePlay,
                 ),
                 const SizedBox(width: 8),
-                const Text("SoundHelix Track 1"),
+                const Text("My Local Song"), // Change to your song name
               ],
             ),
           ],

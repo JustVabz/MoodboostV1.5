@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("MoodBoost",
-                    style: TextStyle(color: priTextColor) ),
+                    style: TextStyle(color: priTextColor, fontWeight: FontWeight.w900, fontSize: 48) ),
                 const SizedBox(height: 40),
                 TextField(
                   controller: usernameController,
@@ -36,14 +36,12 @@ class LoginPage extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      final username = usernameController.text.trim();
-                      if (username.isNotEmpty) {
+                      String username = usernameController.text;    
                   Navigator.pushReplacementNamed(
                     context,
-                    '/home',
+                    '/home', 
                     arguments: username,                   // ← send username
                   );
-                }
                     },
                     child: const Text('Login'),
                   ),

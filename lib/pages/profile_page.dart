@@ -13,42 +13,67 @@ class ProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const CircleAvatar(
-              radius: 40,
-              backgroundImage: AssetImage('assets/images/avatar.png'), // replace with your asset
+              radius: 50,
+              backgroundColor: Colors.amber,
+              child: Icon(Icons.person, size: 50, color: Colors.white),
+              // Replace with actual image: backgroundImage: AssetImage('assets/johnny.png'),
             ),
             const SizedBox(height: 16),
-            const Text("User Name", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            const Text("user@email.com", style: TextStyle(color: Colors.grey)),
+            const Text(
+              "JohnnyBravo",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              "Suave. Strong. Stylin'.",
+              style: TextStyle(
+                fontSize: 16,
+                fontStyle: FontStyle.italic,
+                color: Colors.amber,
+              ),
+            ),
             const SizedBox(height: 24),
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Theme.of(context).primaryColorLight,
+                color: Colors.amber.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.amber, width: 1),
               ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: const Column(
                 children: [
-                  Icon(Icons.stacked_line_chart),
-                  SizedBox(width: 8),
-                  Text("Mood Streak: 5 Days"),
+                  Text(
+                    "Just a handsome guy lookin' for his\nnext adventure (and maybe a date)",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 14),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    "Mirror's favorite person since forever.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
+                  ),
                 ],
               ),
             ),
             const SizedBox(height: 24),
             Row(
               children: [
-                Expanded(child: _buildInfoBox("Reflections", "12")),
+                Expanded(child: _buildInfoBox("Adventures", "42", Icons.explore)),
                 const SizedBox(width: 12),
-                Expanded(child: _buildInfoBox("Music Played", "8")),
+                Expanded(child: _buildInfoBox("Dates", "∞", Icons.favorite)),
               ],
             ),
             const SizedBox(height: 12),
             Row(
               children: [
-                Expanded(child: _buildInfoBox("Sessions", "6")),
+                Expanded(child: _buildInfoBox("Hair Flips", "1.2K", Icons.style)),
                 const SizedBox(width: 12),
-                Expanded(child: _buildInfoBox("Badges", "3")),
+                Expanded(child: _buildInfoBox("Cool Points", "MAX", Icons.star)),
               ],
             ),
           ],
@@ -58,21 +83,48 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoBox(String title, String value) {
+  Widget _buildInfoBox(String title, String value, IconData icon) {
     return Container(
-      padding: const EdgeInsets.all(16),
-      height: 80,
+      padding: const EdgeInsets.all(12),
+      height: 90,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.amber.withOpacity(0.2),
+            blurRadius: 6,
+            offset: const Offset(0, 2),
+          )
+        ],
+        border: Border.all(color: Colors.amber.withOpacity(0.3)),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(value, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-          const SizedBox(height: 4),
-          Text(title, style: const TextStyle(fontSize: 12)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 18, color: Colors.amber),
+              const SizedBox(width: 4),
+              Text(
+                value,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.black87,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.grey[700],
+            ),
+          ),
         ],
       ),
     );
