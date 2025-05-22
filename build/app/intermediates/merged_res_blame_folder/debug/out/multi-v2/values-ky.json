@@ -1,16 +1,40 @@
 {
     "logs": [
         {
-            "outputFile": "com.johnverz.app1.app-mergeDebugResources-24:/values-ky/values-ky.xml",
+            "outputFile": "com.johnverz.app1.app-mergeDebugResources-26:/values-ky/values-ky.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\8.9\\transforms\\952e63fd78772fde22f1f772bc6a4468\\transformed\\core-1.13.1\\res\\values-ky\\values-ky.xml",
+                    "source": "C:\\Users\\bobby\\.gradle\\caches\\transforms-3\\8d341a9c1092a6d4d84e5ea53ac4ae5c\\transformed\\jetified-media3-exoplayer-1.4.1\\res\\values-ky\\values-ky.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,126,191,262,333,420,491,578,662",
+                        "endColumns": "70,64,70,70,86,70,86,83,80",
+                        "endOffsets": "121,186,257,328,415,486,573,657,738"
+                    },
+                    "to": {
+                        "startLines": "9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "786,857,922,993,1064,1151,1222,1309,1393",
+                        "endColumns": "70,64,70,70,86,70,86,83,80",
+                        "endOffsets": "852,917,988,1059,1146,1217,1304,1388,1469"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bobby\\.gradle\\caches\\transforms-3\\62d8d4b3fad0bbb71eae0f867ea1ab14\\transformed\\core-1.13.1\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
                         "startOffsets": "55,155,257,360,467,571,675,786",
                         "endColumns": "99,101,102,106,103,103,110,100",
                         "endOffsets": "150,252,355,462,566,670,781,882"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,18",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,155,257,360,467,571,675,1474",
+                        "endColumns": "99,101,102,106,103,103,110,100",
+                        "endOffsets": "150,252,355,462,566,670,781,1570"
                     }
                 }
             ]

@@ -59,6 +59,9 @@
     <color name="call_notification_decline_color">#d93025</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
     <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
@@ -120,6 +123,7 @@
     <item name="fragment_container_view_tag" type="id"/>
     <item name="line1" type="id"/>
     <item name="line3" type="id"/>
+    <item name="media_controller_compat_view_tag" type="id"/>
     <item name="report_drawn" type="id"/>
     <item name="special_effects_controller_view_tag" type="id"/>
     <item name="tag_accessibility_actions" type="id"/>
@@ -143,6 +147,7 @@
     <id name="view_tree_saved_state_registry_owner"/>
     <id name="view_tree_view_model_store_owner"/>
     <item name="visible_removing_fragment_view_tag" type="id"/>
+    <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="call_notification_answer_action">Answer</string>
@@ -152,6 +157,15 @@
     <string name="call_notification_incoming_text">Incoming call</string>
     <string name="call_notification_ongoing_text">Ongoing call</string>
     <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="exo_download_completed">Download completed</string>
+    <string name="exo_download_description">Download</string>
+    <string name="exo_download_downloading">Downloading</string>
+    <string name="exo_download_failed">Download failed</string>
+    <string name="exo_download_notification_channel_name">Downloads</string>
+    <string name="exo_download_paused">Downloads paused</string>
+    <string name="exo_download_paused_for_network">Downloads waiting for network</string>
+    <string name="exo_download_paused_for_wifi">Downloads waiting for WiFi</string>
+    <string name="exo_download_removing">Removing downloads</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         
@@ -165,12 +179,17 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
     <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
     <style name="TextAppearance.Compat.Notification.Time">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
     <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
     <style name="Widget.Compat.NotificationActionContainer" parent=""/>
     <style name="Widget.Compat.NotificationActionText" parent=""/>
     <declare-styleable name="ActivityFilter">

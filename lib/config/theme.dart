@@ -1,40 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-final Color accentColor =  Color(0xFF4E45E4);
-final Color primary =  Color(0xFFF7EED3);
-final Color secondary =  Color(0xFFA3AD93);
-final Color priTextColor =  Color(0xFFAAB396);
-final Color sectextColor =  Color(0xFFEBDAA8);
+const Color primary = Color(0xFFF7EED3);
+const Color secondary = Color(0xFFAAB396);
+const Color priTextColor = Color(0xFFAAB396);
+const Color secTextColor = Color(0xFFEBDAA8);
 
-final ThemeData appTheme = ThemeData(
-    useMaterial3: true,
-    colorScheme: ColorScheme(
-        brightness: Brightness.light,
-        primary: Colors.white,
-        onPrimary: secondary,
-        secondary: secondary,
-        onSecondary: primary,
-        error: Colors.redAccent,
-        onError: primary,
-        surface: primary,
-        onSurface: secondary),
-    scaffoldBackgroundColor: primary,
-    textTheme: GoogleFonts.interTextTheme(),
-    appBarTheme: AppBarTheme(
-      backgroundColor: primary,
-      elevation: 0,
-      centerTitle: true,
-      titleTextStyle: GoogleFonts.inter(
-          color: secondary, fontSize: 20, fontWeight: FontWeight.bold),
-      iconTheme: IconThemeData(color: secondary),
+class AppTheme {
+  
+
+  static final ThemeData lightTheme = ThemeData(
+  scaffoldBackgroundColor: primary,
+  primaryColor: secondary,
+  fontFamily: 'etna-free-font.otf',
+  textTheme: const TextTheme(
+        displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+        displayMedium: TextStyle(fontSize: 60.0),
+        displaySmall: TextStyle(fontSize: 48.0),
+        headlineMedium: TextStyle(fontSize: 34.0),
+        headlineSmall: TextStyle(fontSize: 24.0),
+        titleLarge: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500),
+        titleMedium: TextStyle(fontSize: 16.0),
+        titleSmall: TextStyle(fontSize: 14.0),
+        bodyLarge: TextStyle(fontSize: 16.0),
+        bodyMedium: TextStyle(fontSize: 14.0),
+        bodySmall: TextStyle(fontSize: 12.0),
+        labelLarge: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
+        labelSmall: TextStyle(fontSize: 10.0, letterSpacing: 0.5),
+      ).apply(
+        fontFamily: 'etna-free-font.otf',
+      ),
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true,
+    fillColor: primary,
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      foregroundColor: primary, backgroundColor: secondary,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: primary,
-      selectedItemColor: accentColor,
-      unselectedItemColor: Colors.grey,
-      selectedIconTheme: IconThemeData(size: 28),
-      unselectedIconTheme: IconThemeData(size: 24),
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-    ));
+  ),
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    backgroundColor: primary,
+    selectedItemColor: secondary,
+    unselectedItemColor: secTextColor,
+  ),
+);
+
+}
